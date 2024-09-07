@@ -1,0 +1,62 @@
+/* Custom style for the stylish checkboxes */
+.styled-checkbox {
+    position: absolute;
+    opacity: 0;
+}
+
+.styled-checkbox + label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    user-select: none;
+}
+
+.styled-checkbox + label:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #007BFF;
+    border-radius: 4px;
+    background: transparent;
+}
+
+.styled-checkbox:checked + label:before {
+    background-color: #007BFF;
+    border-color: #007BFF;
+}
+
+.styled-checkbox:checked + label:after {
+    content: "\2713"; /* Checkmark */
+    position: absolute;
+    left: 5px;
+    top: 0;
+    color: white;
+    font-size: 18px;
+}
+
+.checkbox-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.search-row span.dt-column-order {
+    display: none;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+
+
+table td:first-child {
+    text-align: center; /* Centers horizontally */
+    vertical-align: middle; /* Centers vertically */
+}
+
+table th:first-child {
+    text-align: center; /* Centers the header in the first column */
+}
