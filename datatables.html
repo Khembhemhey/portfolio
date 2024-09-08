@@ -3,76 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Data Tables</title>
     <link rel="stylesheet" href="https://cdn.datatables.net/2.1.5/css/dataTables.dataTables.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="datacss.css"> <!-- Linking the external CSS file -->
-    <style>
-        .checkbox-group {
-            display: flex;
-            justify-content: space-evenly;
-            margin-bottom: 10px;
-        }
-
-        .checkbox-group label {
-            font-size: 14px;
-            margin-right: 15px;
-        }
-
-        .tab-content {
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-top: none;
-        }
-
-        .nav-tabs .nav-link {
-            border: 1px solid #ddd;
-            border-radius: .375rem .375rem 0 0;
-        }
-
-        /* Add some margin to the search inputs */
-        .search-inputs {
-            margin-bottom: 10px;
-        }
-
-        .search-row input {
-            width: 100%;
-        }
-    </style>
+    <link rel="stylesheet" href="datacss.css"> 
+    <link rel="icon" href="among.png" type="image/png">
 </head>
 <body>
     <div class="container mt-4">
-        <button id="deleteRows" class="btn btn-danger mb-3">Delete Selected Rows</button>
+        <h1 class="text-center">Data Tables</h1>
+        <!-- <button id="deleteRows" class="btn btn-danger mb-3">Delete Selected Rows</button> -->
 
         <!-- Show/Hide Columns Feature -->
-        <div class="checkbox-group">
-            <div>
-                <input type="checkbox" id="toggle-name" class="styled-checkbox toggle-vis" data-column="1" checked>
-                <label for="toggle-name">Name</label>
-            </div>
-            <div>
-                <input type="checkbox" id="toggle-position" class="styled-checkbox toggle-vis" data-column="2" checked>
-                <label for="toggle-position">Position</label>
-            </div>
-            <div>
-                <input type="checkbox" id="toggle-office" class="styled-checkbox toggle-vis" data-column="3" checked>
-                <label for="toggle-office">Office</label>
-            </div>
-            <div>
-                <input type="checkbox" id="toggle-extn" class="styled-checkbox toggle-vis" data-column="4" checked>
-                <label for="toggle-extn">Extn.</label>
-            </div>
-            <div>
-                <input type="checkbox" id="toggle-start" class="styled-checkbox toggle-vis" data-column="5" checked>
-                <label for="toggle-start">Start date</label>
-            </div>
-            <div>
-                <input type="checkbox" id="toggle-salary" class="styled-checkbox toggle-vis" data-column="6" checked>
-                <label for="toggle-salary">Salary</label>
-            </div>
-            <div>
-                <input type="checkbox" id="toggle-phone" class="styled-checkbox toggle-vis" data-column="7" checked>
-                <label for="toggle-phone">Phone Number</label>
+        <div class="checkbox-group-container">
+            <div class="checkbox-group">
+                <div>
+                    <input type="checkbox" id="toggle-name" class="styled-checkbox toggle-vis" data-column="1" checked>
+                    <label for="toggle-name">Name</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="toggle-position" class="styled-checkbox toggle-vis" data-column="2" checked>
+                    <label for="toggle-position">Position</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="toggle-office" class="styled-checkbox toggle-vis" data-column="3" checked>
+                    <label for="toggle-office">Office</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="toggle-extn" class="styled-checkbox toggle-vis" data-column="4" checked>
+                    <label for="toggle-extn">Extn.</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="toggle-start" class="styled-checkbox toggle-vis" data-column="5" checked>
+                    <label for="toggle-start">Start date</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="toggle-salary" class="styled-checkbox toggle-vis" data-column="6" checked>
+                    <label for="toggle-salary">Salary</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="toggle-phone" class="styled-checkbox toggle-vis" data-column="7" checked>
+                    <label for="toggle-phone">Phone Number</label>
+                </div>
             </div>
         </div>
 
@@ -85,7 +57,9 @@
                 <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#tab2" role="tab" aria-controls="profile" aria-selected="false">Table 2</a>
             </li>
         </ul>
+        
         <div class="tab-content" id="myTabContent">
+            <button id="deleteRows" class="btn btn-danger mb-3">Delete Selected Rows</button>
             <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="home-tab">
                 <table id="example1" class="display table table-striped table-bordered" style="width:100%">
                     <thead>
@@ -199,7 +173,7 @@
                     { "data": 2 },
                     { "data": 3 },
                     { "data": 4 },
-                    { "data": 5 },
+                    { "data": 5},
                     { "data": 6 }
                 ],
                 "dom": '<"row"<"col-md-12 text-center"p>>' +
@@ -207,6 +181,16 @@
                        '<"row"<"col-md-6"l>>' +
                        '<"row"<"col-md-12"i>>',
             });
+
+        $(document).ready(function() {
+            // Select the row with the class 'search-row'
+            $('tr.search-row').find('th').each(function() {
+                // Add event listeners to stop propagation
+                $(this).on('click mouseover mouseout mousedown mouseup', function(event) {
+                    event.stopPropagation();
+                });
+            });
+        });
 
             // Apply the search for each column for table1
             $('#search-name').on('keyup change', function() {
