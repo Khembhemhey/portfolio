@@ -10,6 +10,22 @@
     <link rel="icon" href="among.png" type="image/png">
 </head>
 <body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-nav">
+            <nav>
+                <ul>
+                    <li><a href="https://khembhemhey.github.io/portfolio/" target="_blank">Portfolio</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+
+
+
+
     <div class="container mt-4">
         <h1 class="text-center">Data Tables</h1>
         <!-- <button id="deleteRows" class="btn btn-danger mb-3">Delete Selected Rows</button> -->
@@ -49,6 +65,55 @@
         </div>
 
         <!-- Tabs -->
+        <!-- <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#tab1" role="tab" aria-controls="home" aria-selected="true">Table 1</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#tab2" role="tab" aria-controls="profile" aria-selected="false">Table 2</a>
+            </li>
+        </ul> -->
+            <!-- <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="home-tab">
+                <table id="example1" class="display table table-striped table-bordered" style="width:100%">
+                    <thead>
+                        <tr class="search-row">
+                            <th></th>
+                            <th><input type="text" id="search-name" placeholder="Search Name"></th>
+                            <th><input type="text" id="search-position" placeholder="Search Position"></th>
+                            <th><input type="text" id="search-office" placeholder="Search Office"></th>
+                            <th><input type="text" id="search-extn" placeholder="Search Extn."></th>
+                            <th><input type="text" id="search-start" placeholder="Search Start date"></th>
+                            <th><input type="text" id="search-salary" placeholder="Search Salary"></th>
+                            <th><input type="text" id="search-phone" placeholder="Search Phone Number"></th>
+                        </tr>
+                        <tr>
+                            <th>Select</th>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Office</th>
+                            <th>Extn.</th>
+                            <th>Start date</th>
+                            <th>Salary</th>
+                            <th>Phone Number</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Select</th>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Office</th>
+                            <th>Extn.</th>
+                            <th>Start date</th>
+                            <th>Salary</th>
+                            <th>Phone Number</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div> -->
+
+
+             <!-- Tabs -->
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
                 <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#tab1" role="tab" aria-controls="home" aria-selected="true">Table 1</a>
@@ -57,9 +122,10 @@
                 <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#tab2" role="tab" aria-controls="profile" aria-selected="false">Table 2</a>
             </li>
         </ul>
-        
+
+        <!-- Tab content -->
         <div class="tab-content" id="myTabContent">
-            <button id="deleteRows" class="btn btn-danger mb-3">Delete Selected Rows</button>
+            <!-- Table 1 -->
             <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="home-tab">
                 <table id="example1" class="display table table-striped table-bordered" style="width:100%">
                     <thead>
@@ -98,6 +164,9 @@
                     </tfoot>
                 </table>
             </div>
+
+            
+            <!-- Table 2 -->
             <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="profile-tab">
                 <table id="example2" class="display table table-striped table-bordered" style="width:100%">
                     <thead>
@@ -139,7 +208,49 @@
         </div>
     </div>
 
+
+            <!-- <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="profile-tab">
+                <table id="example2" class="display table table-striped table-bordered" style="width:100%">
+                    <thead>
+                        <tr class="search-row">
+                            <th></th>
+                            <th><input type="text" id="search-name-2" placeholder="Search Name"></th>
+                            <th><input type="text" id="search-position-2" placeholder="Search Position"></th>
+                            <th><input type="text" id="search-office-2" placeholder="Search Office"></th>
+                            <th><input type="text" id="search-extn-2" placeholder="Search Extn."></th>
+                            <th><input type="text" id="search-start-2" placeholder="Search Start date"></th>
+                            <th><input type="text" id="search-salary-2" placeholder="Search Salary"></th>
+                            <th><input type="text" id="search-phone-2" placeholder="Search Phone Number"></th>
+                        </tr>
+                        <tr>
+                            <th>Select</th>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Office</th>
+                            <th>Extn.</th>
+                            <th>Start date</th>
+                            <th>Salary</th>
+                            <th>Phone Number</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Select</th>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Office</th>
+                            <th>Extn.</th>
+                            <th>Start date</th>
+                            <th>Salary</th>
+                            <th>Phone Number</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div> -->
+        
+
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src=""https://cdn.datatables.net/2.1.5/js/dataTables.bootstrap5.js></script>
     <script src="https://cdn.datatables.net/2.1.5/js/dataTables.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 

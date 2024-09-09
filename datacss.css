@@ -7,6 +7,60 @@ body {
     padding: 0;
 }
 
+
+/* .bg-primary {
+    --bs-bg-opacity: 1;
+    background-color: white, var(--bs-bg-opacity) !important;
+}
+
+.text-white {
+    --bs-text-opacity: 1;
+    color: black, var(--bs-text-opacity) !important;
+} */
+
+/* Header Section with a Short Background */
+header {
+    background-color: #6482AD; /* Dark background color */
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    width: 80%; /* Adjust this to match the width of your table */
+    margin: 0 auto; /* Center the header */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    width: 1300px;
+}
+
+/* Navigation Styling */
+.header-nav nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.header-nav nav ul li {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.header-nav nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.header-nav nav ul li a:hover {
+    color: #7FA1C3; /* Golden color on hover */
+}
+
+
+
+
+
+
+
+
 /* Container Styling */
 .container {
     background-color: white;
@@ -34,6 +88,7 @@ button, .btn {
     cursor: pointer;
     font-size: 14px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    
 }
 
 button:hover, .btn:hover {
@@ -41,6 +96,13 @@ button:hover, .btn:hover {
     color: black;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
+
+.button-container {
+    display: flex;
+    justify-content: flex-end; /* Aligns button to the right */
+    margin-bottom: 10px;
+}
+
 
 
 /* Stylish Checkbox (with better alignment and padding) */
@@ -178,12 +240,78 @@ button:hover, .btn:hover {
 
 
 /* Table Styling */
+
+.table {
+    --bs-table-color-type: initial;
+    --bs-table-bg-type: initial;
+    --bs-table-color-state: initial;
+    --bs-table-bg-state: initial;
+    --bs-table-color: #000000;
+    --bs-table-bg: 7FA1C3;
+    --bs-table-border-color: var(--bs-border-color);
+    --bs-table-accent-bg: transparent;
+    --bs-table-striped-color: var(--bs-body-color);
+    --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
+    --bs-table-active-color: var(--bs-body-color);
+    --bs-table-active-bg: rgba(0, 0, 0, 0.1);
+    --bs-table-hover-color: var(--bs-body-color);
+    --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
+    width: 100%;
+    margin-bottom: 1rem;
+    vertical-align: top;
+    border-color: #0861b9;
+
+}
+
+div.dt-container .dt-paging .dt-paging-button {
+    box-sizing: border-box;
+    display: inline-block;
+    min-width: 1.5em;
+    padding: 0.5em 1em;
+    margin-left: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    text-decoration: none !important;
+    cursor: pointer;
+    color: white !important; /* Set default text color */
+    border: 1px solid transparent;
+    border-radius: 10px; /* Rounded square */
+    background: #7FA1C3; /* Light blue */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for the cute effect */
+}
+
+div.dt-container .dt-paging .dt-paging-button:hover {
+    background-color: #6482AD; /* Darker blue on hover */
+    color: white !important; /* White text on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+}
+
+/* Active or focused state */
+div.dt-container .dt-paging .dt-paging-button:focus,
+div.dt-container .dt-paging .dt-paging-button:active {
+    background-color: #6482AD !important; /* Keep darker blue for active */
+    color: white !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+    outline: none;
+}
+
+/* Current page button */
+div.dt-container .dt-paging .dt-paging-button.current {
+    background-color: white !important; /* White background for the current page */
+    color: #6482AD !important; /* Darker blue text color */
+    border: 1px solid #6482AD; /* Optional: Dark blue border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for the current page */
+}
+
+
 table {
     width: 100%;
     border-collapse: collapse;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flexbox;
 }
 
 thead th {
@@ -393,4 +521,72 @@ div.dataTables_wrapper div.dataTables_paginate .paginate_button {
 div.dataTables_wrapper div.dataTables_paginate .ellipsis {
     color: #89CFF0 !important;
     font-weight: bold !important;
+}
+
+
+
+
+/* Styling for Table Header and Footer of table #example1 */
+#example1 thead th {
+    background-color: #6482AD; /* Light blue for header */
+    color: white;
+    padding: 12px;
+    font-size: 20px;
+    /* border-bottom: 2px solid #6DAEDB; Darker blue border */
+}
+
+#example1 tfoot th {
+    background-color: #6482AD; /* Soft blue for footer */
+    color: #ffffff; /* Darker blue text */
+    padding: 12px;
+    border-top: 2px solid #6DAEDB; /* Darker blue border */
+}
+
+/* Ensure table rows have a blue background as well */
+#example1 tbody tr {
+    background-color: #bbd9f9 !important; /* Light blue background for all rows */
+}
+
+#example1 tbody tr:nth-child(odd) {
+    background-color: #9cc1ea !important; /* Alternate lighter blue */
+}
+
+#example1 tbody tr:hover {
+    background-color: #5b80ad !important; /* Slightly darker blue on hover */
+}
+
+
+
+
+
+
+
+
+
+/* Styling for Table Header and Footer of table #example2 */
+#example2 thead th {
+    background-color: #6482AD; /* Light blue for header */
+    color: white;
+    padding: 12px;
+    font-size: 20px;
+}
+
+#example2 tfoot th {
+    background-color: #6482AD; /* Soft blue for footer */
+    color: #ffffff; /* White text for footer */
+    padding: 12px;
+    border-top: 2px solid #6DAEDB; /* Darker blue border */
+}
+
+/* Ensure table rows have a blue background as well */
+#example2 tbody tr {
+    background-color: #bbd9f9 !important; /* Light blue background for all rows */
+}
+
+#example2 tbody tr:nth-child(odd) {
+    background-color: #9cc1ea !important; /* Alternate lighter blue */
+}
+
+#example2 tbody tr:hover {
+    background-color: #5b80ad !important; /* Slightly darker blue on hover */
 }
